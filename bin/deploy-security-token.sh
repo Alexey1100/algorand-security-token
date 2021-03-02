@@ -10,10 +10,10 @@ python security_token.py
 export ADDR_CREATOR=$1
 export TEAL_APPROVAL_PROG="security_token_approval.teal"
 export TEAL_CLEAR_PROG="security_token_clear_state.teal"
-export GLOBAL_BYTESLICES=1
-export GLOBAL_INTS=60
-export LOCAL_BYTESLICES=0
-export LOCAL_INTS=4
+export GLOBAL_BYTESLICES=54
+export GLOBAL_INTS=10
+export LOCAL_BYTESLICES=8
+export LOCAL_INTS=8
 export ALGORAND_DATA="devnet/Primary"
 
 goal app create --creator $ADDR_CREATOR \
@@ -26,5 +26,6 @@ goal app create --creator $ADDR_CREATOR \
 --app-arg "int:8000000000000000000" \
 --app-arg "int:8" \
 --app-arg "str:XYZTEST" \
+--app-arg "str:Token of XYZ" \
 --on-completion optin \
 -d $ALGORAND_DATA
